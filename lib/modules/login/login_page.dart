@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:split_it/theme/app_theme.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,30 +12,59 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                "Divida suas contas com seus amigos",
-                style: TextStyle(
-                    color: AppTheme.colors.font,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold),
-              ),
-              Column(
-                children: [
-                  Text(
-                    "Faça seu login com uma das contas abaixo",
-                    style: TextStyle(fontSize: 16),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 40.0, top: 80.0),
+            child: Row(
+              children: [
+                Container(
+                  width: 236,
+                  child: Text(
+                    "Divida suas contas com seus amigos",
+                    style: GoogleFonts.montserrat(
+                        color: AppTheme.colors.font,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w700),
                   ),
-                ],
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              ListTile(
+                leading: Image.asset("assets/images/emoji.png"),
+                title: Text(
+                  "Faça seu login com uma das contas abaixo",
+                  style: GoogleFonts.inter(
+                      fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+              ),
+              SizedBox(height: 32),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: Image.asset("assets/images/google.png"),
+                label: Text(
+                  "Entrar com Google",
+                  style: GoogleFonts.inter(
+                      fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+              ),
+              SizedBox(height: 12),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: Image.asset("assets/images/apple.png"),
+                label: Text(
+                  "Entrar com Apple",
+                  style: GoogleFonts.inter(
+                      fontSize: 16, fontWeight: FontWeight.w400),
+                ),
               )
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
