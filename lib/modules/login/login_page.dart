@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:split_it/modules/login/widgets/social_button.dart';
 import 'package:split_it/theme/app_theme.dart';
 
@@ -48,14 +50,46 @@ class _LoginPageState extends State<LoginPage> {
                 child: SocialButtonWidget(
                   imagePath: "assets/images/google.png",
                   label: "Entrar com Google",
+                  onTap: () async {
+                    GoogleSignIn _googleSignIn = GoogleSignIn(
+                      scopes: [
+                        'email',
+                      ],
+                    );
+                    try {
+                      final response = await _googleSignIn.signIn();
+                      print(response);
+                    } catch (error) {
+                      print(error);
+                    }
+                  },
                 ),
               ),
               SizedBox(height: 12.0),
+              // ignore: todo
+              //TODO: CONFIGURAR APPLE
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 32.0),
                 child: SocialButtonWidget(
                   imagePath: "assets/images/apple.png",
                   label: "Entrar com Apple",
+                  onTap: () {
+                    Fluttertoast.showToast(
+                      msg: "Login com Apple indisponível!",
+                    );
+                    /* try {
+                      final credential =
+                          await SignInWithApple.getAppleIDCredential(
+                        scopes: [
+                          AppleIDAuthorizationScopes.email,
+                          AppleIDAuthorizationScopes.fullName,
+                        ],
+                      );
+                      print(credential);
+                    } catch (e) {
+                      print(e);
+                    } */
+                  },
                 ),
               ),
             ],
