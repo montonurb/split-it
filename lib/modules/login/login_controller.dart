@@ -6,20 +6,32 @@ import 'package:split_it/modules/login/login_state.dart';
 class LoginController {
   LoginState state = LoginStateEmpty();
   VoidCallback onUpdate;
+  Function(LoginState state)? onChange;
   final LoginService service;
   LoginController({required this.onUpdate, required this.service});
 
   Future<void> googleSignIn() async {
     try {
       state = LoginStateLoading();
-      onUpdate();
+      update();
       final user = await service.googleSignIn();
       state = LoginStateSuccess(user: user);
       //state = LoginStateFailure(message: "error.toString()");
-      onUpdate();
+      update();
     } catch (error) {
       state = LoginStateFailure(message: error.toString());
-      onUpdate();
+      update();
+    }
+  }
+
+  void listen(Function(LoginState state) onChange) {
+    this.onChange = onChange;
+  }
+
+  void update() {
+    onUpdate();
+    if (onChange != null) {
+      onChange!(state);
     }
   }
 
