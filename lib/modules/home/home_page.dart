@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:split_it/modules/home/widgets/app_bar_widget.dart';
 import 'package:split_it/modules/home/widgets/info_card_widget.dart';
+import 'package:split_it/modules/home/widgets/list_history_widget.dart';
 import 'package:split_it/modules/login/widgets/models/user_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,6 +20,13 @@ class _HomePageState extends State<HomePage> {
         onTapAddButton: () {
           print("Clicou!");
         },
+      ),
+      body: Column(
+        children: [
+          ListHistoryWidget(value: -350),
+          ListHistoryWidget(value: 350),
+          ListHistoryWidget(value: -350),
+        ],
       ),
     );
   }

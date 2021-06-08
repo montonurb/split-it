@@ -9,6 +9,9 @@ abstract class AppTextStyles {
   TextStyle get infoCardTitle;
   TextStyle get infoCardSubtitle1;
   TextStyle get infoCardSubtitle2;
+  TextStyle get descriptionList;
+  TextStyle get dateList;
+  TextStyle get valueList;
 }
 
 class AppTextStalesDefault implements AppTextStyles {
@@ -52,5 +55,26 @@ class AppTextStalesDefault implements AppTextStyles {
         color: AppTheme.colors.infoCardSubtitle2,
         fontSize: 20,
         fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get descriptionList => GoogleFonts.inter(
+        color: AppTheme.colors.descriptionList,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get dateList => GoogleFonts.inter(
+        color: AppTheme.colors.dateList,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get valueList => GoogleFonts.inter(
+        color: AppTheme.colors.dateList,
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
       );
 }

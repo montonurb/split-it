@@ -16,6 +16,8 @@ abstract class AppColors {
   Color get icon;
   Color get iconBackground1;
   Color get iconBackground2;
+  Color get descriptionList;
+  Color get dateList;
 }
 
 class AppColorsDefault implements AppColors {
@@ -63,4 +65,10 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get infoCardSubtitle2 => Color(0xFFE83F5B);
+
+  @override
+  Color get descriptionList => Color(0xFF455250);
+
+  @override
+  Color get dateList => Color(0xFF666666);
 }
