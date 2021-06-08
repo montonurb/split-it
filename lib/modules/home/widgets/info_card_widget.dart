@@ -41,7 +41,7 @@ class InfoCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    "${value.toStringAsFixed(2)}",
+                    "R\$ ${value.toStringAsFixed(2)}",
                     style: textStyle,
                   ),
                 ],

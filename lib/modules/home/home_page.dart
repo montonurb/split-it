@@ -20,9 +20,6 @@ class _HomePageState extends State<HomePage> {
           print("Clicou!");
         },
       ),
-      body: InfoCardWidget(
-        value: 350.00,
-      ),
     );
   }
 }
