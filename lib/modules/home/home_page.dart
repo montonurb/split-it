@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:split_it/modules/home/widgets/app_bar_widget.dart';
+import 'package:split_it/modules/home/widgets/info_card_widget.dart';
 import 'package:split_it/modules/login/widgets/models/user_model.dart';
-import 'package:split_it/theme/app_theme.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final UserModel user =
         ModalRoute.of(context)!.settings.arguments as UserModel;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("${user.name}"),
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image.network("${user.photoUrl}"),
-        ),
-        centerTitle: true,
-        backgroundColor: AppTheme.colors.backgroundSecondary,
+      appBar: AppBarWidget(
+        user: user,
+        onTapAddButton: () {
+          print("Clicou!");
+        },
+      ),
+      body: InfoCardWidget(
+        value: 350.00,
       ),
     );
   }
