@@ -13,7 +13,5 @@ class LoginStateFailure extends LoginState {
 
 class LoginStateSuccess extends LoginState {
   final UserModel user;
-  LoginStateSuccess({
-    required this.user,
-  });
+  LoginStateSuccess({required this.user});
 }

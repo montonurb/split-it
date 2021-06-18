@@ -12,6 +12,7 @@ abstract class AppTextStyles {
   TextStyle get descriptionList;
   TextStyle get dateList;
   TextStyle get valueList;
+  TextStyle get friendList;
 }
 
 class AppTextStalesDefault implements AppTextStyles {
@@ -73,8 +74,15 @@ class AppTextStalesDefault implements AppTextStyles {
 
   @override
   TextStyle get valueList => GoogleFonts.inter(
-        color: AppTheme.colors.dateList,
+        color: AppTheme.colors.valueList,
         fontSize: 14,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get friendList => GoogleFonts.inter(
+        color: AppTheme.colors.friendList,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       );
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:split_it/modules/home/repositories/home_repository.dart';
+import 'package:split_it/modules/home/repositories/home_repository_mock.dart';
 import 'package:split_it/modules/home/widgets/app_bar_widget.dart';
-import 'package:split_it/modules/home/widgets/list_history_widget.dart';
+import 'package:split_it/modules/home/widgets/event_tile_widget.dart';
 import 'package:split_it/modules/login/widgets/models/user_model.dart';
+import 'package:split_it/shared/models/event_model.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,6 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final events = <EventModel>[];
+  late HomeRepository repository;
+  void getEvents() async {
+    final response = await repository.getEvents();
+    events.addAll(response);
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    repository = HomeRepositoryMock();
+    getEvents();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final UserModel user =
@@ -21,16 +39,15 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ListHistoryWidget(value: -350),
-              ListHistoryWidget(value: 350),
-              ListHistoryWidget(value: -350),
-              ListHistoryWidget(value: -350),
-              ListHistoryWidget(value: -350),
-              ListHistoryWidget(value: -350),
+              ...events
+                  .map(
+                    (e) => EventTileWidget(model: e),
+                  )
+                  .toList()
             ],
           ),
         ),

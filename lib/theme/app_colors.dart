@@ -18,6 +18,9 @@ abstract class AppColors {
   Color get iconBackground2;
   Color get descriptionList;
   Color get dateList;
+  Color get valueList;
+  Color get friendList;
+  Color get dividerList;
 }
 
 class AppColorsDefault implements AppColors {
@@ -71,4 +74,13 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get dateList => Color(0xFF666666);
+
+  @override
+  Color get valueList => Color(0xFF666666);
+
+  @override
+  Color get friendList => Color(0xFFA4B2AE);
+
+  @override
+  Color get dividerList => Color(0xFF666666);
 }
