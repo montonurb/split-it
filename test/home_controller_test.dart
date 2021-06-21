@@ -23,7 +23,7 @@ void main() {
           EventModel(
               title: "Lasanha", created: DateTime.now(), value: 50, people: 2)
         ]);
-    await controller.getEvents(() {});
+    await controller.getEvents();
     expect(states[0], isInstanceOf<HomeStateLoading>());
     expect(states[1], isInstanceOf<HomeStateSuccess>());
     expect(states.length, 2);
@@ -34,7 +34,7 @@ void main() {
     final states = <HomeState>[];
     controller.listen((state) => states.add(state));
     when(repository.getEvents).thenThrow("Deu erro!");
-    await controller.getEvents(() {});
+    await controller.getEvents();
     expect(states[0], isInstanceOf<HomeStateLoading>());
     expect(states[1], isInstanceOf<HomeStateFailure>());
     expect((states[1] as HomeStateFailure).message, "Deu erro!");
