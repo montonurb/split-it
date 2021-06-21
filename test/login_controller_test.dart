@@ -35,6 +35,7 @@ void main() {
     await controller.googleSignIn();
     expect(states[0], isInstanceOf<LoginStateLoading>());
     expect(states[1], isInstanceOf<LoginStateFailure>());
+    expect((states[1] as LoginStateFailure).message, "Deu erro!");
     expect(states.length, 2);
   });
 
