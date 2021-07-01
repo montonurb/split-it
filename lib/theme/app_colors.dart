@@ -28,10 +28,13 @@ abstract class AppColors {
   Color get stepperNextButton;
   Color get stepperTitle;
   Color get stepperSubtitle;
+  Color get stepperNextButtonDisabled;
   Color get textField;
   Color get hintTextField;
   Color get inputBorder;
-  Color get stepperNextButtonDisabled;
+  Color get friendsName;
+  Color get friendsIconAdd;
+  Color get friendListRemove;
 }
 
 class AppColorsDefault implements AppColors {
@@ -127,4 +130,13 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get stepperNextButtonDisabled => Color(0xFF666666);
+
+  @override
+  Color get friendsName => Color(0xFF666666);
+
+  @override
+  Color get friendsIconAdd => Color(0xFF40B28C);
+
+  @override
+  Color get friendListRemove => Color(0xFFE83F5B);
 }

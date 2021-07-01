@@ -22,6 +22,7 @@ abstract class AppTextStyles {
   TextStyle get stepperNextButtonDisabled;
   TextStyle get textField;
   TextStyle get hintTextField;
+  TextStyle get friendsName;
 }
 
 class AppTextStalesDefault implements AppTextStyles {
@@ -156,5 +157,12 @@ class AppTextStalesDefault implements AppTextStyles {
         color: AppTheme.colors.stepperNextButtonDisabled,
         fontSize: 12,
         fontWeight: FontWeight.w500,
+      );
+
+  @override
+  TextStyle get friendsName => GoogleFonts.inter(
+        color: AppTheme.colors.friendsName,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
       );
 }
