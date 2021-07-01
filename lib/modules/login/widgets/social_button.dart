@@ -40,7 +40,7 @@ class SocialButtonWidget extends StatelessWidget {
               ),
             ),
             Expanded(child: Container()),
-            Text(label, style: AppTheme.textStyles.button),
+            Text(label, style: AppTheme.textStyles.textLogin),
             Expanded(child: Container())
           ],
         ),

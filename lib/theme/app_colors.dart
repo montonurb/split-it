@@ -21,6 +21,17 @@ abstract class AppColors {
   Color get valueList;
   Color get friendList;
   Color get dividerList;
+  Color get pagesCreateSplit1;
+  Color get pagesCreateSplit2;
+  Color get textCreateSplit;
+  Color get backButton;
+  Color get stepperNextButton;
+  Color get stepperTitle;
+  Color get stepperSubtitle;
+  Color get textField;
+  Color get hintTextField;
+  Color get inputBorder;
+  Color get stepperNextButtonDisabled;
 }
 
 class AppColorsDefault implements AppColors {
@@ -83,4 +94,37 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get dividerList => Color(0xFF666666);
+
+  @override
+  Color get pagesCreateSplit1 => Color(0xFF3CAB82);
+
+  @override
+  Color get pagesCreateSplit2 => Color(0xFF666666);
+
+  @override
+  Color get textCreateSplit => Color(0xFF455250);
+
+  @override
+  Color get backButton => Color(0xFF666666);
+
+  @override
+  Color get stepperNextButton => Color(0xFF455250);
+
+  @override
+  Color get stepperTitle => Color(0xFF455250);
+
+  @override
+  Color get stepperSubtitle => Color(0xFF455250);
+
+  @override
+  Color get textField => Color(0xFF666666);
+
+  @override
+  Color get hintTextField => Color(0xFF455250);
+
+  @override
+  Color get inputBorder => Color(0xFF455250);
+
+  @override
+  Color get stepperNextButtonDisabled => Color(0xFF666666);
 }

@@ -40,17 +40,5 @@ class LoginController {
     Fluttertoast.showToast(
       msg: "Login com Apple indisponível!",
     );
-    /* try {
-                      final credential =
-                          await SignInWithApple.getAppleIDCredential(
-                        scopes: [
-                          AppleIDAuthorizationScopes.email,
-                          AppleIDAuthorizationScopes.fullName,
-                        ],
-                      );
-                      print(credential);
-                    } catch (e) {
-                      print(e);
-                    } */
   }
 }

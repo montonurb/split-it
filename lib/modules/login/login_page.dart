@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: 236,
                   child: Text(
                     "Divida suas contas com seus amigos",
-                    style: AppTheme.textStyles.title,
+                    style: AppTheme.textStyles.titleSplash,
                   ),
                 ),
               ],
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                   leading: Image.asset("assets/images/emoji.png"),
                   title: Text(
                     "Faça seu login com uma das contas abaixo",
-                    style: AppTheme.textStyles.button,
+                    style: AppTheme.textStyles.textLogin,
                   ),
                 ),
               ),
