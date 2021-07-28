@@ -6,12 +6,7 @@ class UserModel {
   final String id;
   final String? photoUrl;
 
-  UserModel({
-    required this.email,
-    this.name,
-    required this.id,
-    this.photoUrl,
-  });
+  UserModel({required this.email, this.name, required this.id, this.photoUrl});
 
   factory UserModel.google(GoogleSignInAccount account) {
     return UserModel(

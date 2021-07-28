@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:split_it/modules/home/widgets/icon_dollar_widget.dart';
 import 'package:split_it/modules/home/widgets/loading_widget.dart';
 import 'package:split_it/shared/models/event_model.dart';
@@ -59,13 +60,14 @@ class EventTileWidget extends StatelessWidget {
                     contentPadding: EdgeInsets.zero,
                     title: Text("${model.title}",
                         style: AppTheme.textStyles.descriptionList),
-                    subtitle: Text("${model.created!.toIso8601String()}",
+                    subtitle: Text(
+                        DateFormat("d MMMM", "pt_BR").format(model.created!),
                         style: AppTheme.textStyles.dateList),
                     trailing: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("R\$ ${model.value}",
+                        Text("R\$ ${(model.value)!.toStringAsFixed(2)}",
                             style: AppTheme.textStyles.valueList),
                         SizedBox(height: 5),
                         Text(
