@@ -23,6 +23,17 @@ abstract class AppTextStyles {
   TextStyle get textField;
   TextStyle get hintTextField;
   TextStyle get friendsName;
+  TextStyle get pagesShowSplit1;
+  TextStyle get textShowSplit;
+  TextStyle get valueShowSplit;
+  TextStyle get amountItemsShowSplit;
+  TextStyle get nameItemShowSplit;
+  TextStyle get dinnerSymbolValueShowPage;
+  TextStyle get valueShowPage;
+  TextStyle get totalValueItemsShowSplit;
+  TextStyle get totalValueItemsShowSplitBold;
+  TextStyle get remainderPay;
+  TextStyle get remainderPayBold;
 }
 
 class AppTextStalesDefault implements AppTextStyles {
@@ -164,5 +175,82 @@ class AppTextStalesDefault implements AppTextStyles {
         color: AppTheme.colors.friendsName,
         fontSize: 16,
         fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get pagesShowSplit1 => GoogleFonts.roboto(
+        color: AppTheme.colors.pagesShowSplit1,
+        fontSize: 14,
+        fontWeight: FontWeight.w700,
+      );
+
+  @override
+  TextStyle get textShowSplit => GoogleFonts.roboto(
+        color: AppTheme.colors.pagesShowSplit1,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get valueShowSplit => GoogleFonts.roboto(
+        color: AppTheme.colors.valueShowSplit,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get amountItemsShowSplit => GoogleFonts.inter(
+        color: AppTheme.colors.amountItemsShowSplit,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get nameItemShowSplit => GoogleFonts.inter(
+        color: AppTheme.colors.nameItemShowSplit,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get dinnerSymbolValueShowPage => GoogleFonts.inter(
+        color: AppTheme.colors.nameItemShowSplit,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get valueShowPage => GoogleFonts.inter(
+        color: AppTheme.colors.nameItemShowSplit,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get totalValueItemsShowSplit => GoogleFonts.inter(
+        color: AppTheme.colors.totalValueItemsShowSplit,
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get totalValueItemsShowSplitBold => GoogleFonts.inter(
+        color: AppTheme.colors.totalValueItemsShowSplit,
+        fontSize: 14,
+        fontWeight: FontWeight.w700,
+      );
+
+  @override
+  TextStyle get remainderPay => GoogleFonts.inter(
+        color: AppTheme.colors.remainderPay,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get remainderPayBold => GoogleFonts.inter(
+        color: AppTheme.colors.remainderPay,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
       );
 }

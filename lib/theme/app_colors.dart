@@ -35,6 +35,12 @@ abstract class AppColors {
   Color get friendsName;
   Color get friendsIconAdd;
   Color get friendListRemove;
+  Color get pagesShowSplit1;
+  Color get valueShowSplit;
+  Color get amountItemsShowSplit;
+  Color get nameItemShowSplit;
+  Color get totalValueItemsShowSplit;
+  Color get remainderPay;
 }
 
 class AppColorsDefault implements AppColors {
@@ -139,4 +145,22 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get friendListRemove => Color(0xFFE83F5B);
+
+  @override
+  Color get pagesShowSplit1 => Color(0xFF455250);
+
+  @override
+  Color get valueShowSplit => Color(0xFF40B28C);
+
+  @override
+  Color get amountItemsShowSplit => Color(0xFF909996);
+
+  @override
+  Color get nameItemShowSplit => Color(0xFF666666);
+
+  @override
+  Color get totalValueItemsShowSplit => Color(0xFF455250);
+
+  @override
+  Color get remainderPay => Color(0xFFE83F5B);
 }
